@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>CSS Transitions Demo</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <style>
         * {
@@ -12,50 +12,172 @@
         body {
             background-color: teal;
         }
-        h1{
-            font-size: 3em;
-            color: #E4E5E6;
+        .title{
             text-align: center;
-
-            white-space: nowrap;
-            margin: 50px 0;
         }
+
+        h1{
+            display:inline-block;
+            font-size: 3em;
+            color: teal;
+            text-align: center;
+            padding-top: 50px;
+            white-space: nowrap;
+            margin-bottom: 20px;
+        }
+
+        h1:hover{
+            animation: pulse 2s infinite;
+        }
+
         h5{
-            margin-top: -35px;
-            color: #E4E5E6;
+            display: inline-block;
+            color: teal;
             font-size: 25px;
             text-align: center;
             padding-bottom: 25px;
-
+            transition: transform 2s;
         }
+
+        h5:hover{
+            transform: skew(20deg);
+        }
+
+        @-webkit-keyframes pulse {
+            0% { -webkit-transform: scale(1); }
+            50% { -webkit-transform: scale(1.1); }
+            100% { -webkit-transform: scale(1); }
+        }
+        @-moz-keyframes pulse {
+            0% { -moz-transform: scale(1); }
+            50% { -moz-transform: scale(1.1); }
+            100% { -moz-transform: scale(1); }
+        }
+        @-ms-keyframes pulse {
+            0% { -ms-transform: scale(1); }
+            50% { -ms-transform: scale(1.1); }
+            100% { -ms-transform: scale(1); }
+        }
+        @-o-keyframes pulse {
+            0% { -o-transform: scale(1); }
+            50% { -o-transform: scale(1.1); }
+            100% { -o-transform: scale(1); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+
         .social-links{
             text-align: center;
             font-size: 30px;
-            padding-bottom: 50px;
+            margin-bottom: 50px;
             border-bottom: 1px solid white;
         }
         .social-links a{
+            color: teal;
             margin: 20px;
         }
-        .social-links a:visited{
-            color: white;
+
+        @-webkit-keyframes swing
+        {
+            15%
+            {
+                -webkit-transform: translateX(5px);
+                transform: translateX(5px);
+            }
+            30%
+            {
+                -webkit-transform: translateX(-5px);
+                transform: translateX(-5px);
+            }
+            50%
+            {
+                -webkit-transform: translateX(3px);
+                transform: translateX(3px);
+            }
+            65%
+            {
+                -webkit-transform: translateX(-3px);
+                transform: translateX(-3px);
+            }
+            80%
+            {
+                -webkit-transform: translateX(2px);
+                transform: translateX(2px);
+            }
+            100%
+            {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
+        }
+        @keyframes swing
+        {
+            15%
+            {
+                -webkit-transform: translateX(5px);
+                transform: translateX(5px);
+            }
+            30%
+            {
+                -webkit-transform: translateX(-5px);
+                transform: translateX(-5px);
+            }
+            50%
+            {
+                -webkit-transform: translateX(3px);
+                transform: translateX(3px);
+            }
+            65%
+            {
+                -webkit-transform: translateX(-3px);
+                transform: translateX(-3px);
+            }
+            80%
+            {
+                -webkit-transform: translateX(2px);
+                transform: translateX(2px);
+            }
+            100%
+            {
+                -webkit-transform: translateX(0);
+                transform: translateX(0);
+            }
         }
 
-        /*.title {*/
-            /*height: 300px;*/
-            /*background: #00416A;  !* fallback for old browsers *!*/
-            /*background: -webkit-linear-gradient(to left, #E4E5E6, #00416A);  !* Chrome 10-25, Safari 5.1-6 *!*/
-            /*background: linear-gradient(to left, #E4E5E6, #00416A); !* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ *!*/
-            /*background-size: 200%;*/
-            /*background-position: 0%;*/
-            /*transition: background-position 0.3s;*/
-        /*}*/
-        /*.title:hover{*/
-            /*background-position: 100%;*/
-        /*}*/
-        /*.title:hover h1{*/
-            /*color: #00416A*/
-        /*}*/
+        .fa-linkedin:hover{
+            -webkit-animation: swing 1s ease;
+            animation: swing 1s ease;
+            -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+        }
+
+        .fa-twitter{
+            transition: transform 2s;
+        }
+        .fa-twitter:hover{
+            transform: rotate(360deg);
+        }
+        .fa-instagram{
+            transition: transform 1s;
+        }
+        .fa-instagram:hover{
+            transform: scale(1.3);
+        }
+
+        .social-links a:link{
+            color: teal;
+        }
+        .social-links a:visited{
+            color: teal;
+        }
+        .title{
+            background-color: white;
+            height: 250px;
+        }
+
         .button-container {
             margin: 50px auto auto;
             padding: 20px;
@@ -321,7 +443,8 @@
 </head>
 <body>
     <div class="title">
-        <h1>CSS Transitions Demo</h1>
+        <h1 class="pulse">Hover Me</h1>
+        <br>
         <h5>Made by: David Shin</h5>
         <div class="social-links">
             <a href="https://www.linkedin.com/in/david-shin/"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
